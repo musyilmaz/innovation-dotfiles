@@ -4,6 +4,7 @@ configs=(
   alacritty
   git
   starship
+  tmux
 )
 
 target_dir=~
