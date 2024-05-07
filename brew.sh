@@ -38,3 +38,5 @@ do
     brew install --cask $i
   fi
 done
+
+source ./brew/post_install.sh
