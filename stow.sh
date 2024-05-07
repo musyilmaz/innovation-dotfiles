@@ -3,6 +3,7 @@
 configs=(
   alacritty
   git
+  starship
 )
 
 target_dir=~
