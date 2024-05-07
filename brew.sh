@@ -6,7 +6,12 @@ source ./brew/casks.sh
 # Ask for sudo upfront
 sudo -v
 
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; 
+do 
+  sudo -n true; 
+  sleep 60; 
+  kill -0 "$$" || exit;
+done 2>/dev/null &
 
 # update brew and upgrade already-installed binaries
 brew update
