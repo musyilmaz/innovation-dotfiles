@@ -1,4 +1,6 @@
 # Folder view configuration files
 .DS_Store
 
-
+# Ignoring installed TPM Plugins
+tmux/.tmux/plugins/*
+!tmux/.tmux/plugins/tpm
