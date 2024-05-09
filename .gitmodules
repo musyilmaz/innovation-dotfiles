@@ -1,6 +1,8 @@
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+  url = https://github.com/tmux-plugins/tpm
+  ignore = dirty
 [submodule "nvim/.config/atlas"]
 	path = nvim/.config/atlas
 	url = https://github.com/musyilmaz/atlas-nvim
+  ignore = dirty
