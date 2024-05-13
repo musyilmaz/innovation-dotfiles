@@ -6,6 +6,7 @@ configs=(
   nvim
   starship
   tmux
+  zsh
 )
 
 target_dir=~
