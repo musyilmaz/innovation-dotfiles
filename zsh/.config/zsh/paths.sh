@@ -26,3 +26,5 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
+
+eval "$(direnv hook zsh)"
