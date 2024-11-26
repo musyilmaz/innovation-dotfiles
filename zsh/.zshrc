@@ -12,3 +12,10 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH_CONFIGS/aliases.sh
 source $ZSH_CONFIGS/paths.sh
 
+
+# bun completions
+[ -s "/Users/musyilmaz/.bun/_bun" ] && source "/Users/musyilmaz/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
