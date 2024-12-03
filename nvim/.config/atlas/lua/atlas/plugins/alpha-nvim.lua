@@ -5,10 +5,9 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local alpha = require("alpha")
-      local dashboard = require("alpha.themes.dashboard")
+      local startify = require("alpha.themes.startify")
 
-      -- Set header
-      dashboard.section.header.val = {
+      startify.section.header.val = {
         "  █████╗ ████████╗██╗      █████╗ ███████╗ ",
         " ██╔══██╗╚══██╔══╝██║     ██╔══██╗██╔════╝ ",
         " ███████║   ██║   ██║     ███████║███████╗ ",
@@ -17,12 +16,13 @@ return {
         " ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝ ",
       }
 
-      -- Set menu
-      dashboard.section.buttons.val = {
-        dashboard.button("q", " > Quit NVIM", "<cmd>qa<CR>"),
+      startify.section.top_buttons.val = {
+        startify.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
       }
 
-      alpha.setup(dashboard.opts)
+      startify.file_icons.provider = "devicons"
+
+      alpha.setup(startify.opts)
 
       vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
     end,
