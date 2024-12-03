@@ -1,7 +1,7 @@
 return {
   {
     "windwp/nvim-autopairs",
-    event = { "InsertEnter" },
+    event = "InsertEnter",
     dependencies = {
       "hrsh7th/nvim-cmp",
     },
@@ -14,6 +14,7 @@ return {
           lua = { "string" },
           javascript = { "template_string" },
         },
+        enable_check_bracket_line = false,
       })
 
       -- import nvim-autopairs completion functionality

@@ -177,6 +177,29 @@ return {
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
       })
 
+      -- configure rust-analyzer
+      lspconfig.rust_analyzer.setup({
+        on_attach = on_attach,
+        settings = {
+          ["rust-analyzer"] = {
+            imports = {
+              granularity = {
+                group = "module",
+              },
+              prefix = "self",
+            },
+            cargo = {
+              buildScripts = {
+                enable = true,
+              },
+            },
+            procMacro = {
+              enable = true,
+            },
+          },
+        },
+      })
+
       -- configure lua server (with special settings)
       lspconfig["lua_ls"].setup({
         capabilities = capabilities,

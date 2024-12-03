@@ -44,6 +44,8 @@ return {
           "typescript",
           "tsx",
           "yaml",
+          "go",
+          "rust",
         },
         sync_install = false,
         auto_install = true,
