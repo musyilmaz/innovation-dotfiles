@@ -9,6 +9,7 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
+      local util = require("lspconfig/util")
 
       local keymap = vim.keymap
       local opts = { noremap = true, silent = true }
@@ -178,23 +179,15 @@ return {
       })
 
       -- configure rust-analyzer
-      lspconfig.rust_analyzer.setup({
+      lspconfig["rust_analyzer"].setup({
         on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "rust" },
+        root_dit = util.root_pattern("Cargo.toml"),
         settings = {
-          ["rust-analyzer"] = {
-            imports = {
-              granularity = {
-                group = "module",
-              },
-              prefix = "self",
-            },
+          ["rust_analyzer"] = {
             cargo = {
-              buildScripts = {
-                enable = true,
-              },
-            },
-            procMacro = {
-              enable = true,
+              allFeatures = true,
             },
           },
         },

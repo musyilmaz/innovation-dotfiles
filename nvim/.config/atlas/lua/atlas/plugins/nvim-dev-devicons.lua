@@ -11,6 +11,11 @@ return {
           cterm_color = "199",
           name = "GraphQL",
         },
+        rust = {
+          icon = "",
+          color = "#ffffff",
+          name = "rust",
+        },
       },
       color_icons = true,
       default = true,

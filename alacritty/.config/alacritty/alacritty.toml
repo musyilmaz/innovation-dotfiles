@@ -1,6 +1,3 @@
-import = [
-  "~/.config/alacritty/theme/themes/tokyo-night-storm.toml"
-]
 
 [env]
 TERM = "xterm-256color"
@@ -19,4 +16,9 @@ option_as_alt = "Both"
 [font]
 normal.family = "MesloLGMDZ Nerd Font Mono"
 size = 12
+
+[general]
+import = [
+  "~/.config/alacritty/theme/themes/tokyo-night-storm.toml"
+]
 
