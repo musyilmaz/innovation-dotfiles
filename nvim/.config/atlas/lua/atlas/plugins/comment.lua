@@ -15,4 +15,12 @@ return {
       })
     end,
   },
+  {
+    "fangjunzhou/comment-divider.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>cdb", "<CMD>CommentDividerBox<CR>" },
+      { "<leader>cdl", "<CMD>CommentDividerLine<CR>" },
+    },
+  },
 }
