@@ -3,6 +3,8 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 
+opt.conceallevel = 2
+
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
