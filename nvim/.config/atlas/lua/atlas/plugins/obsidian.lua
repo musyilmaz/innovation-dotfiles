@@ -24,7 +24,17 @@ return {
     {
       "<leader>ny",
       "<cmd>ObsidianYesterday<cr>",
-      desc = "ObsidianYesterday",
+      desc = "Obsidian Yesterday",
+    },
+    {
+      "<leader>nd",
+      "<cmd>ObsidianDailies<cr>",
+      desc = "Obsidian Dailies",
+    },
+    {
+      "<leader>nnt",
+      "<cmd>ObsidianNewFromTemplate<cr>",
+      desc = "Obsidian New Note From Template",
     },
   },
   opts = {
