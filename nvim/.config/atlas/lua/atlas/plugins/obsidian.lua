@@ -3,8 +3,12 @@ return {
   version = "*",
   lazy = false,
   event = {
-    "BufReadPre " .. vim.fn.expand("~") .. "/Documents/personal/Atlas/*.md",
-    "BufNewFile " .. vim.fn.expand("~") .. "/Documents/personal/Atlas/*.md",
+    "BufReadPre "
+      .. vim.fn.expand("~")
+      .. "/Users/musyilmaz/Library/Mobile Documents/com~apple~CloudDocs/musyilmaz/**/*.md",
+    "BufNewFile "
+      .. vim.fn.expand("~")
+      .. "/Users/musyilmaz/Library/Mobile Documents/com~apple~CloudDocs/musyilmaz/**/*.md",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -41,7 +45,7 @@ return {
     workspaces = {
       {
         name = "Obsidian",
-        path = "~/Documents/personal/musyilmaz",
+        path = "/Users/musyilmaz/Library/Mobile Documents/com~apple~CloudDocs/musyilmaz",
       },
     },
     notes_subdir = "00 - Inbox",

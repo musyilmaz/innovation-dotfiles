@@ -87,7 +87,7 @@ return {
                 url = "https://json.schemastore.org/prettierrc.json",
               },
               {
-                fileMatch = { ".eslintrc", ".eslintrc.json" },
+                fileMatch = { ".eslintrc", ".eslintrc.json", "eslint.config.mjs" },
                 url = "https://json.schemastore.org/eslintrc.json",
               },
               {
