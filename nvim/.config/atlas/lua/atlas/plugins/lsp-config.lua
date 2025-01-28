@@ -42,6 +42,13 @@ return {
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
 
+      lspconfig.eslint.setup({
+        flags = {
+          allow_incremental_sync = false,
+          debounce_text_changes = 1000,
+        },
+      })
+
       -- configure html server
       lspconfig["html"].setup({
         capabilities = capabilities,
