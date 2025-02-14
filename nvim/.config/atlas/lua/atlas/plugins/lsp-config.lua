@@ -49,6 +49,8 @@ return {
         },
       })
 
+      lspconfig.biome.setup({})
+
       -- configure html server
       lspconfig["html"].setup({
         capabilities = capabilities,
@@ -183,6 +185,13 @@ return {
         on_attach = on_attach,
         handlers = handlers,
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
+      })
+
+      lspconfig["php"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        handlers = handlers,
+        filetypes = { "php" },
       })
 
       -- configure rust-analyzer
