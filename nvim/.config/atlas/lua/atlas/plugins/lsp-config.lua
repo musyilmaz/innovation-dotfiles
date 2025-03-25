@@ -188,13 +188,6 @@ return {
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
       })
 
-      lspconfig["php"].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-        filetypes = { "php" },
-      })
-
       -- configure rust-analyzer
       lspconfig["rust_analyzer"].setup({
         on_attach = on_attach,
