@@ -30,3 +30,6 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.swapfile = false
+
+-- Required for avante.nvim
+opt.laststatus = 3

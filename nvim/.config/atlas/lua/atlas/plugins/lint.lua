@@ -7,10 +7,10 @@ return {
       local lint = require("lint")
 
       lint.linters_by_ft = {
-        javascript = { "eslint", "biome" },
-        typescript = { "eslint", "biome" },
-        javascriptreact = { "eslint", "biome" },
-        typescriptreact = { "eslint", "biome" },
+        javascript = { "eslint", "biomejs" },
+        typescript = { "eslint", "biomejs" },
+        javascriptreact = { "eslint", "biomejs" },
+        typescriptreact = { "eslint", "biomejs" },
       }
 
       local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
