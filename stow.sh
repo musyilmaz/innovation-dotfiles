@@ -7,6 +7,7 @@ configs=(
   starship
   tmux
   zsh
+  aider
 )
 
 target_dir=~
