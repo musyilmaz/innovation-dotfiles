@@ -46,11 +46,26 @@ return {
       provider = "ollama",
       ollama = {
         model = "qwen2.5-coder:7b",
+        -- model = "deepseek-coder:1.3b",
+      },
+      vendors = {
+        deepseek_coder_1_3b = {
+          __inherited_from = "ollama",
+          model = "deepseek-coder:1.3b",
+        },
+        gemma_3_1b = {
+          __inherited_from = "ollama",
+          model = "gemma3:1b",
+        },
+        deepseek_r1_7b = {
+          __inherited_from = "ollama",
+          model = "deepseek-r1:7b",
+        },
       },
       auto_suggestions_provider = "ollama",
       cursor_applying_provider = "ollama",
       behaviour = {
-        auto_suggestions = false, -- Experimental stage
+        auto_suggestions = true, -- Experimental stage
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,
@@ -61,7 +76,6 @@ return {
         enable_claude_text_editor_tool_mode = false, -- Whether to enable Claude Text Editor Tool Mode.
       },
       mappings = {
-        --- @class AvanteConflictMappings
         diff = {
           ours = "co",
           theirs = "ct",
