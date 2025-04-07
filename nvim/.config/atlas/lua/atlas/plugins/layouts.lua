@@ -127,4 +127,10 @@ return {
       { "<leader>sm", "<cmd>MaximizerToggle<cr>", desc = "Maximize/minimize a split" },
     },
   },
+
+  -- Dressing
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+  },
 }

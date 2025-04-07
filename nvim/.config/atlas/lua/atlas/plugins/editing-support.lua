@@ -55,9 +55,29 @@ return {
 
       comment.setup({
         padding = true,
+        sticky = true,
         pre_hook = ts_context_commentstring.create_pre_hook(),
       })
     end,
+  },
+
+  -- TODO Comments
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      {
+        "<leader>tq",
+        "<cmd>TodoQuickFix<cr>",
+        desc = "TODO - Quickfix",
+      },
+      {
+        "<leader>tt",
+        "<cmd>TodoTelescope<cr>",
+        desc = "TODO - Telescope",
+      },
+    },
+    opts = {},
   },
 
   -- NVIM-AUTOPAIRS
