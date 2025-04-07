@@ -46,7 +46,7 @@ local lsp_eslint_settings = {
 }
 
 local function virtual_text_format(diagnostic)
-  return string.format("%s %s", diagnostic_signs[diagnostic.severity], diagnostic.message)
+  return string.format("%s", diagnostic_signs[diagnostic.severity])
 end
 
 local function virtual_lines_format(diagnostic)
