@@ -193,4 +193,15 @@ return {
       })
     end,
   },
+
+  -- LEAP.nvim
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      local keymap = vim.keymap
+      local keymap_opts = { noremap = true, silent = true }
+
+      keymap.set("n", "s", "<Plug>(leap-anywhere)", keymap_opts)
+    end,
+  },
 }
