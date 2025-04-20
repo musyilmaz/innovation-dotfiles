@@ -21,3 +21,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+. "$HOME/.local/bin/env"
