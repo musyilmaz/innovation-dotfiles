@@ -11,18 +11,14 @@ binaries=(
   glow
   go
   jq
-  lazygit
   luarocks
   mdless
   mkcert
-  mongodb/brew/mongodb-community
-  mysql-client
   neovim
   nghttp2
   nvm
   openjdk
   pnpm
-  poetry
   postgresql@14
   pyenv-virtualenv
   python@3.8
