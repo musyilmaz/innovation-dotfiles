@@ -97,8 +97,6 @@ return {
       { "saghen/blink.cmp" },
     },
     config = function()
-      local lspconfig = require("lspconfig")
-
       local on_attach = on_attach_keymaps
       local capabilities = require("blink.cmp").get_lsp_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -128,85 +126,109 @@ return {
         },
       })
 
-      lspconfig.lua_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            diagnostics = {
-              disable = { "missing-fields" },
+      -- Function to enable all LSP servers at once
+      local function enable_lsp_servers()
+        -- Configure all LSP servers using native vim.lsp.config
+        vim.lsp.config("lua_ls", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          settings = {
+            Lua = {
+              diagnostics = {
+                disable = { "missing-fields" },
+              },
             },
           },
-        },
-      })
+        })
 
-      lspconfig.eslint.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = lsp_eslint_settings,
-      })
+        vim.lsp.config("eslint", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          settings = lsp_eslint_settings,
+        })
 
-      lspconfig.html.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("html", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.ts_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("ts_ls", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.jsonls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        filetypes = { "json", "jsonc" },
-        settings = {
-          json = {
-            schemas = require("schemastore").json.schemas({}),
-            validate = { enable = true },
+        vim.lsp.config("jsonls", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          filetypes = { "json", "jsonc" },
+          settings = {
+            json = {
+              schemas = require("schemastore").json.schemas({}),
+              validate = { enable = true },
+            },
           },
-        },
-      })
+        })
 
-      lspconfig.cssls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("cssls", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.tailwindcss.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("tailwindcss", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.prismals.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("prismals", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.graphql.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("graphql", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.emmet_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("emmet_ls", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.astro.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("astro", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.gopls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("gopls", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-      lspconfig.rust_analyzer.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+        vim.lsp.config("rust_analyzer", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
+
+        -- Enable all configured LSP servers
+        vim.lsp.enable({
+          "lua_ls",
+          "eslint",
+          "html",
+          "ts_ls",
+          "jsonls",
+          "cssls",
+          "tailwindcss",
+          "prismals",
+          "graphql",
+          "emmet_ls",
+          "astro",
+          "gopls",
+          "rust_analyzer",
+        })
+      end
+
+      -- Call the function to enable all LSP servers
+      enable_lsp_servers()
     end,
   },
 
