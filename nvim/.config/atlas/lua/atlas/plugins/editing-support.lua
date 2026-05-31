@@ -22,7 +22,7 @@ return {
           markdown = { "prettier" },
           graphql = { "prettier" },
           lua = { "stylua" },
-          python = { "isort", "black" },
+          python = { "isort", "ruff" },
           rust = { "rustfmt", lsp_format = "fallback" },
         },
         format_on_save = {

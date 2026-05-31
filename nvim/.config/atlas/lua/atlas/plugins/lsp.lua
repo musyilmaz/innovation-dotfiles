@@ -209,6 +209,11 @@ return {
           capabilities = capabilities,
         })
 
+        vim.lsp.config("pyright", {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
+
         -- Enable all configured LSP servers
         vim.lsp.enable({
           "lua_ls",
@@ -271,6 +276,7 @@ return {
           "jsonls",
           "lua_ls",
           "prismals",
+          "pyright",
         },
         automatic_installation = true,
       })
@@ -280,7 +286,6 @@ return {
           "prettier",
           "stylua",
           "isort",
-          "black",
           "eslint_d",
           "eslint",
         },
