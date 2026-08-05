@@ -3,6 +3,7 @@
 configs=(
   alacritty
   git
+  herdr
   nvim
   starship
   tmux
