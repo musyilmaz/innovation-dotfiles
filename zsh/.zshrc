@@ -33,6 +33,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # GitHub MCP server token (sourced from gh CLI auth)
 export GITHUB_PERSONAL_ACCESS_TOKEN="$(gh auth token 2>/dev/null)"
 
+# Claude Code accounts: each gets its own config dir (settings, history, login)
+alias claude-work='CLAUDE_CONFIG_DIR="$HOME/.claude-work" claude'
+alias claude-my='CLAUDE_CONFIG_DIR="$HOME/.claude-my" claude'
+
 # Machine-local overrides and secrets. This repo is public, so credentials live
 # here instead of in tracked files; create ~/.zshrc.local per device.
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
