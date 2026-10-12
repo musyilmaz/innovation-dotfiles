@@ -19,3 +19,8 @@ import = [
   "~/.config/alacritty/theme/themes/tokyo-night-storm.toml"
 ]
 
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
