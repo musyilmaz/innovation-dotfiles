@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 binaries=(
+  chroma
   cocoapods
   docker
   eslint
