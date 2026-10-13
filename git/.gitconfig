@@ -11,3 +11,8 @@
 
 [init]
   defaultBranch = main
+
+# Identity for every repo under the confideo tree (github.com/confideohq).
+# Must be declared after [user] above to take precedence over it.
+[includeIf "gitdir:~/Documents/development/confideo/"]
+  path = ~/Documents/development/confideo/.gitconfig

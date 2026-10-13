@@ -8,6 +8,9 @@ export ZSH_CONFIGS=$HOME/.config/zsh
 
 plugins=(git brew colorize common-aliases zsh-interactive-cd)
 source $ZSH/oh-my-zsh.sh
+# common-aliases' global alias P expands inside omz_urlencode whenever
+# oh-my-zsh is re-sourced, causing "command not found: pygmentize" on every prompt.
+unalias 'P' 2>/dev/null
 
 source $ZSH_CONFIGS/aliases.sh
 source $ZSH_CONFIGS/paths.sh
