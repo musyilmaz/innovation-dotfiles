@@ -1,29 +1,75 @@
+# herdr config, migrated from ~/.tmux.conf
+#   validate:  herdr config check
+#   apply:     herdr server reload-config
+#   full ref:  herdr --default-config
+
 onboarding = false
-# herdr configuration — mirrors ~/.tmux.conf counterparts
-# Full reference: herdr --default-config
-
-[theme]
-name = "catppuccin"
-
-auto_switch = false
-[theme.custom]
-panel_bg = "reset"
 
 [keys]
+# tmux: unbind C-b / set -g prefix C-a
+# Caveat: herdr has no `send-prefix` equivalent, so literal Ctrl+A (readline
+# beginning-of-line) is not reachable while this is the prefix. Switch to
+# "ctrl+alt+a" if that bites.
 prefix = "ctrl+a"
-split_vertical = "prefix+="
-split_horizontal = "prefix+minus"
+
+# herdr names splits after the DIVIDER's orientation; tmux names them after the
+# split AXIS. The two are inverted, so these look swapped versus .tmux.conf but
+# produce identical layouts.
+split_vertical = "prefix+="   # tmux `bind = split-window -h`, side-by-side
+split_horizontal = "prefix+-" # tmux `bind - split-window -v`, stacked
+
+# tmux binds these; herdr's defaults are prefix+q / prefix+shift+t.
+detach = "prefix+d"
+rename_tab = "prefix+,"
+
+# Already identical to tmux — pinned so a future herdr default change can't
+# move them out from under existing muscle memory.
+help = "prefix+?"
+new_tab = "prefix+c"
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+switch_tab = "prefix+1..9"
+close_pane = "prefix+x"
+zoom = "prefix+z"
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+[theme]
+# Matches the Dracula hexes hardcoded across the old @nova-segment-*-colors.
+# Swap to "terminal" for the closer analogue of `status-bg default`, which
+# inherited the host terminal's palette instead of setting its own.
+name = "dracula"
 
 [ui]
+mouse_capture = true
 mouse_scroll_lines = 3
 
-show_agent_labels_on_pane_borders = true
-agent_panel_sort = "spaces"
+# tmux draws splitters between panes only, with no frame around the pane area.
+pane_outer_borders = false
+
+# The old @nova-nerdfonts true; uses glyphs instead of color dots.
+status_indicators = "symbols"
+
+# Replaces the @nova-segments-0-right row. `spotify` and `session_name` are
+# dropped: neither binary exists on this machine, so both rendered empty.
+tab_bar_right = [
+  { type = "zoom" },
+  { type = "hostname" },
+  { type = "datetime", format = "%H:%M:%S" },
+]
+tab_bar_right_separator = "  "
+
 [session]
+# Covers tmux-resurrect + @continuum-restore 'on'.
 resume_agents_on_restore = true
 
 [experimental]
-pane_history = true
+# Nearest analogue to `bind-key C-a send-prefix`, which existed to drive a
+# nested tmux. Enable only if you actually run herdr inside a herdr pane.
+# allow_nested = false
 
-[ui.toast]
-delivery = "herdr"
+# Retains pane scrollback across full server restarts, the part of
+# tmux-resurrect that session persistence alone does not cover.
+pane_history = true
