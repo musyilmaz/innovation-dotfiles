@@ -11,6 +11,7 @@ casks=(
   discord
   figma
   folx
+  ghostty
   google-chrome
   hiddenbar
   insomnia

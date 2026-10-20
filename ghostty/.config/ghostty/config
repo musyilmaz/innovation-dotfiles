@@ -1,0 +1,22 @@
+# Ghostty config, mirrors alacritty/.config/alacritty/alacritty.toml
+#   validate:  ghostty +validate-config
+#   reload:    cmd+shift+,
+
+# First window attaches to the persistent herdr session; later windows/tabs get
+# a plain shell. Interactive zsh so .zshrc puts ~/.local/bin on PATH even when
+# Ghostty is launched from the Dock.
+initial-command = /bin/zsh -lic herdr
+
+theme = TokyoNight Storm
+font-family = MesloLGMDZ Nerd Font Mono
+font-size = 12
+
+maximize = true
+window-padding-x = 10
+window-padding-y = 10
+background-opacity = 0.8
+background-blur = true
+macos-option-as-alt = true
+
+# alacritty: Shift+Return sends ESC+CR (newline in Claude Code prompts)
+keybind = shift+enter=text:\x1b\r

@@ -2,6 +2,7 @@
 
 configs=(
   alacritty
+  ghostty
   git
   herdr
   nvim
