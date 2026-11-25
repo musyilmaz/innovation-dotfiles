@@ -42,6 +42,7 @@ focus_pane_right = "prefix+l"
 # inherited the host terminal's palette instead of setting its own.
 name = "dracula"
 
+auto_switch = false
 [ui]
 mouse_capture = true
 mouse_scroll_lines = 3

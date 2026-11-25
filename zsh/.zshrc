@@ -43,3 +43,9 @@ alias claude-my='CLAUDE_CONFIG_DIR="$HOME/.claude-my" claude'
 # Machine-local overrides and secrets. This repo is public, so credentials live
 # here instead of in tracked files; create ~/.zshrc.local per device.
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
+# direnv: per-folder env (e.g. ~/Documents/development/boardgames/.envrc sets CLAUDE_CONFIG_DIR). Keep last.
+eval "$(direnv hook zsh)"
+
+# Silence direnv load/export messages
+export DIRENV_LOG_FORMAT=""
